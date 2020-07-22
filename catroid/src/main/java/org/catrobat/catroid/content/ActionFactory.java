@@ -1321,6 +1321,15 @@ public class ActionFactory extends Actions {
 		TapAtAction action = Actions.action(TapAtAction.class);
 		action.setPosition(x, y);
 		action.setSprite(sprite);
+		action.setDuration(0);
+		return action;
+	}
+
+	public Action createTapForAction(Sprite sprite, Formula x, Formula y, Formula duration) {
+		TapAtAction action = Actions.action(TapAtAction.class);
+		action.setPosition(x, y);
+		action.setSprite(sprite);
+		action.setDuration(duration);
 		return action;
 	}
 

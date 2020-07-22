@@ -55,6 +55,7 @@ import org.catrobat.catroid.physics.PhysicsWorld;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -83,6 +84,7 @@ public class Sprite implements Cloneable, Nameable, Serializable {
 	private transient boolean convertToGroupItemSprite = false;
 	private transient Multimap<EventId, EventThread> idToEventThreadMap = LinkedHashMultimap.create();
 	private transient Set<ConditionScriptTrigger> conditionScriptTriggers = new HashSet<>();
+	private transient List<Integer> usedTouchPositions = new ArrayList<>();
 
 	@XStreamAsAttribute
 	private String name;
@@ -531,5 +533,19 @@ public class Sprite implements Cloneable, Nameable, Serializable {
 
 	public Multimap<EventId, EventThread> getIdToEventThreadMap() {
 		return idToEventThreadMap;
+	}
+
+	public int getUnusedPosition() {
+		int result = 0;
+		while (result < 20 && usedTouchPositions.contains(result)) {
+			++result;
+		}
+		usedTouchPositions.add(result);
+
+		return result;
+	}
+
+	public void releaseUsedPoistion(int position) {
+		usedTouchPositions.removeAll(Collections.singleton(position));
 	}
 }

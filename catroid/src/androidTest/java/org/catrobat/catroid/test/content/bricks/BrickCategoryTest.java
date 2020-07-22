@@ -174,6 +174,7 @@ import org.catrobat.catroid.content.bricks.StopScriptBrick;
 import org.catrobat.catroid.content.bricks.StopSoundBrick;
 import org.catrobat.catroid.content.bricks.StoreCSVIntoUserListBrick;
 import org.catrobat.catroid.content.bricks.TapAtBrick;
+import org.catrobat.catroid.content.bricks.TapForBrick;
 import org.catrobat.catroid.content.bricks.ThinkBubbleBrick;
 import org.catrobat.catroid.content.bricks.ThinkForBubbleBrick;
 import org.catrobat.catroid.content.bricks.TripleStitchBrick;
@@ -400,6 +401,7 @@ public class BrickCategoryTest {
 						AssertUserListsBrick.class,
 						WaitTillIdleBrick.class,
 						TapAtBrick.class,
+						TapForBrick.class,
 						FinishStageBrick.class,
 						StoreCSVIntoUserListBrick.class,
 						WebRequestBrick.class)},

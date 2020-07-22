@@ -88,6 +88,16 @@ public class CatrobatTestRunnerTest {
 	}
 
 	@Test
+	public void testTapAtDuration() throws Exception {
+		testAsset("testTapAtDuration.catrobat", "catrobatTestRunnerTests/success");
+	}
+
+	@Test
+	public void testTapAtMultitouch() throws Exception {
+		testAsset("testTapAtMultitouch.catrobat", "catrobatTestRunnerTests/success");
+	}
+
+	@Test
 	public void testSuccessListEqual() throws Exception {
 
 		testAsset("testSuccessListEqual.catrobat", "catrobatTestRunnerTests/success");
